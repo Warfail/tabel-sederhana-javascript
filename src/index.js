@@ -1,3 +1,26 @@
+
+var tableHeaders = ['NAMA','EMAIL','TELEPON'] 
+
+function createNewTableHeader(headerTitle){
+	const temp = document.createElement('th');
+	temp.appendChild(document.createTextNode(headerTitle));
+	return temp
+}
+
+function addHeader() {
+	var tableHeaderPlaceHolder = document.getElementById('table-header-place-holder');
+	tableHeaders.forEach(header=>{
+		tableHeaderPlaceHolder.appendChild(createNewTableHeader(header));		
+	})	
+}
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+	addHeader();
+});
+
+
+export default tableHeaders;
+
 var Data = [
 	["Rezky", "rezky@bot.com", "(353) 01 222 3333"],
 	["Diva", "diva@gmail.com", "(01) 22 888 4444"],
